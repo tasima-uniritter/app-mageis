@@ -1,4 +1,4 @@
-package com.tasima.appmageis.controllers;
+package com.tasima.appmageis.web;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.EnableAutoConfiguration;
@@ -11,7 +11,7 @@ public class SampleController {
 
     @RequestMapping("/")
     String home() {
-        return "index";
+        return "index.html";
     }
 
     public static void main(String[] args) throws Exception {
