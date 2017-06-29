@@ -10,4 +10,9 @@ public class SampleController {
     String home() {
         return "index";
     }
+    
+    @RequestMapping("/execute")
+    String execute() {
+        return "execute";
+    }
 }
