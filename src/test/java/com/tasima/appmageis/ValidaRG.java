@@ -1,6 +1,6 @@
 package com.tasima.appmageis;
 
-import static org.junit.Assert.assertFalse;
+import static org.junit.Assert.assertEquals;
 
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -17,16 +17,18 @@ public class ValidaRG {
 	public void validaTamanhoDoRG(){
 		
 		String registro = "12345678900";
-		@SuppressWarnings("unused")
 		RG rg;
+		Boolean validador = true; 
 		
 		try {
 			rg = new RG(registro);
-			assertFalse(true);
-		} catch (Exception e) {
 			
-			assertFalse(false);
+			if(!rg.getRg().equals(registro)) validador = false;
+		} catch (Exception e) {
+			validador = false;
 		}
+		
+		assertEquals("Valida se o RG é valido", true, validador);
 	}
 	
 	@Test 
@@ -35,14 +37,16 @@ public class ValidaRG {
 		String registro = "12345678900000";
 		@SuppressWarnings("unused")
 		RG rg;
+		Boolean validador = false; 
 		
 		try {
 			rg = new RG(registro);
-			assertFalse(false);
 		} catch (Exception e) {
 			
-			assertFalse(true);
+			validador = true;
 		}
+		
+		assertEquals("Valida se o RG é valido", true, validador);
 	}
 	
 	@Test 
@@ -52,14 +56,15 @@ public class ValidaRG {
 		
 		@SuppressWarnings("unused")
 		RG rg;
+		Boolean validador = false; 
 		
 		try {
 			rg = new RG(registro);
-			assertFalse(false);
 		} catch (Exception e) {
-			
-			assertFalse(true);
+			validador = true;
 		}
+		
+		assertEquals("Valida se o RG é valido", true, validador);
 	}
 	
 	@Test 
@@ -69,14 +74,34 @@ public class ValidaRG {
 		
 		@SuppressWarnings("unused")
 		RG rg;
+		Boolean validador = false; 
 		
 		try {
 			rg = new RG(registro);
-			assertFalse(false);
+			
 		} catch (Exception e) {
 			
-			assertFalse(true);
+			validador = true;
 		}
+		assertEquals("Valida se o RG é valido", true, validador);
+	}
+	
+	@Test 
+	public void validaNullDoRG(){
+		
+		String registro = "";
+		
+		@SuppressWarnings("unused")
+		RG rg;
+		Boolean validador = false; 
+		
+		try {
+			rg = new RG(registro);
+		} catch (Exception e) {
+			
+			validador = true;
+		}
+		assertEquals("Valida se o RG é valido", true, validador);
 	}
 
 }

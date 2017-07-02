@@ -5,9 +5,11 @@ public class RG  {
 	private String rg;
 	
 	public RG(String rg) throws Exception {
-		if(this.valida(rg)){
+		if(!this.valida(rg)){
 			throw new Exception("RG não é valido");
 		}
+		
+		this.rg = rg;
 	}
 
 	private boolean valida(String rg) {
@@ -29,5 +31,4 @@ public class RG  {
 	public String getRg() {
 		return rg;
 	}
-
 }

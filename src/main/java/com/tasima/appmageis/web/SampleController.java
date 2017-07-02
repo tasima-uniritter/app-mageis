@@ -1,5 +1,7 @@
 package com.tasima.appmageis.web;
 
+import java.util.Date;
+
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -17,14 +19,14 @@ public class SampleController {
     }
     
     @RequestMapping(value="/execute", method=RequestMethod.POST)
-    String execute(@RequestParam("nome") String rg, Model model) {
+    String execute(@RequestParam("rg") String rg, Model model) {
     	
     	try {
 			RG registro = new RG(rg);
-			model.addAttribute("message","O RG" + registro.getRg() + " é valido!");
+			model.addAttribute("message","O RG " + registro.getRg() + " é valido!");
 		} catch (Exception e) {
-			e.printStackTrace();
-			model.addAttribute("message","O RG" + rg + " é valido!");
+			System.out.println(new Date(System.currentTimeMillis())+ " INFO --- " + e.getMessage());
+			model.addAttribute("message","O RG " + rg + " é invalido!");
 		}
     	
         return "execute";
