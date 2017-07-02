@@ -10,18 +10,16 @@
 			<div class="jumbotron" align="center" style="margin-top: 5px;">
 				<h1>TASIMA<small>Metódos Ágeis - Deploy</small></h1>
 			</div>
+			<h3>Validador de RG</h3>
+			<div align="center" class="form-group">
+				<form class="form-inline" action="#" th:action="@{/execute}" method="post" placeholder="Digite um rg">
+				    <input class="form-control" type="text" id="RG" name="rg" />
+				    <input type="submit" id="valide" name="valide" value="Validar!" class="btn btn-default"/>
+				</form>
+			</div>
 		</div>
 		
-		<h3>Validador de RG</h3>
-		<div align="center" class="form-group">
-			<form class="form-inline" action="#" th:action="@{/execute}" method="post" placeholder="Digite um rg">
-			    <input class="form-control" type="text" id="RG" name="rg" />
-			    <input type="submit" id="valide" name="valide" value="Validar!" class="btn btn-default"/>
-			</form>
-			<a href="execute" class="btn btn-lg btn-primary">Execute algo!</a>
-		</div>
-
-	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
 	    <script src="bootstrap/js/bootstrap.min.js"></script>
 	
 	</body>
