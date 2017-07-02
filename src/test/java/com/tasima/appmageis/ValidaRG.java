@@ -1,6 +1,6 @@
 package com.tasima.appmageis;
 
-import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertFalse;
 
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -17,18 +17,32 @@ public class ValidaRG {
 	public void validaTamanhoDoRG(){
 		
 		String registro = "12345678900";
+		@SuppressWarnings("unused")
+		RG rg;
 		
-		RG rg = new RG();
-		assertEquals("Validacao do tamanho do RG", true, rg.valida(registro));
+		try {
+			rg = new RG(registro);
+			assertFalse(true);
+		} catch (Exception e) {
+			
+			assertFalse(false);
+		}
 	}
 	
 	@Test 
 	public void validaTamanhoMaiorDoRG(){
 		
 		String registro = "12345678900000";
+		@SuppressWarnings("unused")
+		RG rg;
 		
-		RG rg = new RG();
-		assertEquals("Validacao do tamanho do RG", false, rg.valida(registro));
+		try {
+			rg = new RG(registro);
+			assertFalse(false);
+		} catch (Exception e) {
+			
+			assertFalse(true);
+		}
 	}
 	
 	@Test 
@@ -36,8 +50,33 @@ public class ValidaRG {
 		
 		String registro = "123456";
 		
-		RG rg = new RG();
-		assertEquals("Validacao do tamanho do RG", false, rg.valida(registro));
+		@SuppressWarnings("unused")
+		RG rg;
+		
+		try {
+			rg = new RG(registro);
+			assertFalse(false);
+		} catch (Exception e) {
+			
+			assertFalse(true);
+		}
+	}
+	
+	@Test 
+	public void validaNumeroDoRG(){
+		
+		String registro = "12345623as";
+		
+		@SuppressWarnings("unused")
+		RG rg;
+		
+		try {
+			rg = new RG(registro);
+			assertFalse(false);
+		} catch (Exception e) {
+			
+			assertFalse(true);
+		}
 	}
 
 }

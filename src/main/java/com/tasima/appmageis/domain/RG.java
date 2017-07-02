@@ -1,14 +1,33 @@
 package com.tasima.appmageis.domain;
 
-public class RG {
+public class RG  {
+	
+	private String rg;
+	
+	public RG(String rg) throws Exception {
+		if(this.valida(rg)){
+			throw new Exception("RG não é valido");
+		}
+	}
 
-	public boolean valida(String rg) {
+	private boolean valida(String rg) {
 		
-		if (rg.length() == 11){
-			return true;
+		try {
+			@SuppressWarnings("unused")
+			Long lg = Long.valueOf(rg);
+		} catch (Exception e) {
+			return false;
 		}
 		
-		return false;
+		if (rg.length() != 11){
+			return false;
+		}
+		
+		return true;
+	}
+
+	public String getRg() {
+		return rg;
 	}
 
 }
