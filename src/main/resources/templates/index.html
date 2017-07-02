@@ -12,9 +12,10 @@
 			</div>
 			<div align="center" class="form-group">
 				<h3>Validador de RG</h3>
-				<form class="form-inline" action="#" th:action="@{/execute}" method="post" placeholder="Digite um rg">
-				    <input class="form-control" type="text" id="rg" name="rg" />
-				    <input type="submit" id="valide" name="valide" value="Validar!" class="btn btn-default"/>
+				<form class="form-inline" action="#" th:action="@{/execute}" method="post" >
+				    <input class="form-control" type="text" id="rg" name="rg" placeholder="Digite um RG válido"/>
+				    <input type="submit" id="valide" name="valide" value="Validar" class="btn btn-default"/>
+					<span id="helpBlock" class="help-block">Para ser válido, um RG <mark>deve ser númerico</mark> e <mark>possuir no máximo 11 caracteres</mark>.</span>
 				</form>
 			</div>
 		</div>
