@@ -13,9 +13,9 @@
 			</div>
 		</div>
 	<div align="center">
-		<form action="execute">
-			<input type="text" >
-			<input type="submit" >
+		<form action="#" th:action="@{/execute}" method="post">
+		    <input type="text" id="RG" name="rg" />
+		    <input type="submit" id="valide" name="valide" value="Validar!" />
 		</form>
 		<a href="execute" class="btn btn-lg btn-primary">Execute algo!</a>
 	</div>
