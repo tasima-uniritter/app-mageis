@@ -1,4 +1,4 @@
-<h3>Trabalho de Deploy autómatico utilizando Heroku da diciplina de métodos ágeis do curso de pós-graduçao TASIMA.</h3>
+<h3>Trabalho de Deploy autómatico utilizando Heroku da diciplina de métodos ágeis do curso de pós-graduçao TASIMA - Uniritter.</h3>
 
 Tecnologias utilizadas:
   - Java 8
