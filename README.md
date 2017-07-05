@@ -4,7 +4,7 @@ Tecnologias utilizadas:
   - Java 8
   - SpringFramework
   - SpringBoot
-  - Junit
+  - JUnit
   - Maven
 
 <h4>Acessar a Wiki para maiores informações</h4>
